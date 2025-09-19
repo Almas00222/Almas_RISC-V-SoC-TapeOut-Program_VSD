@@ -1,5 +1,6 @@
 
-----—-----------------------------------------Installation instructions ------------------------------------------------
+----------------------------------------------Installation instructions ------------------------------------------------
+
 Oracle virtual machine link
 https://www.virtualbox.org/wiki/Downloads
 System Check
