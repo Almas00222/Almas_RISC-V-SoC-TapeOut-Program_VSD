@@ -94,7 +94,7 @@ Follow the steps from [Day 1 Synthesis Lab]!
 opt_clean -purge
 ```
 
-![Lab 1 Output](/home/almas/Almas_RISC-V-SoC-TapeOut-Program_VSD/Week1/DAY-3/)
+![Lab 1 Output](./yosys_opt_check1.png)
 
 ---
 
