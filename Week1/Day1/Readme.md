@@ -1,57 +1,90 @@
-# Day 1: Basics of Verilog RTL Design & Synthesis
+# Day 1: My First Steps in Verilog RTL Design and Synthesis
 
-Welcome to **Day 1** of the RTL Workshop!  
-This session introduces you to digital design using Verilog, open-source simulation with **Icarus Verilog (iverilog)**, and logic synthesis with **Yosys**. Through labs and explanations, you’ll build a solid starting point for RTL design.
+On the first day, I dove into the world of digital design using Verilog. I learned to use open-source tools like Icarus Verilog for simulation and Yosys for logic synthesis. This guide provided hands-on labs and key concepts that helped me build a solid foundation in RTL design.
 
----
+## What I Learned
 
-## Table of Contents
-
-1. [Simulator, Design, and Testbench Explained](#1-simulator-design-and-testbench-explained)  
-2. [Getting Started with iverilog](#2-getting-started-with-iverilog)  
-3. [Hands-on Lab: 2-to-1 Multiplexer Simulation](#3-hands-on-lab-2-to-1-multiplexer-simulation)  
-4. [Code Walkthrough](#4-code-walkthrough)  
-5. [Intro to Yosys & Gate Libraries](#5-intro-to-yosys--gate-libraries)  
-6. [Synthesis with Yosys](#6-synthesis-with-yosys)  
-7. [Recap](#7-recap)
+- **Simulation**: How to test my Verilog code.
+- **Synthesis**: How to convert my code into a hardware-level design.
+- **Hands-on Labs**: Practical exercises with a 2-to-1 multiplexer.
 
 ---
 
-## 1. Simulator, Design, and Testbench Explained
+## Lab 1: Simulating a 2-to-1 Multiplexer
 
-### Simulator
-A **simulator** verifies your digital design by applying inputs and observing outputs before moving to hardware.
+First, I simulated a 2-to-1 multiplexer to see how my Verilog code behaves.
 
-### Design
-The **design** is your Verilog description of the desired logic.
+### Steps I Took to Generate the Waveform:
 
-### Testbench
-A **testbench** provides stimulus (inputs) to the design and checks if the outputs behave as expected.
+1.  **Installed Tools**:
+    ```shell
+    sudo apt update
+    sudo apt install iverilog gtkwave
+    ```
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/93927b96-df80-4da5-b801-284fc2cc6757" alt="Design & Testbench Overview" width="70%">
-</div>
+2.  **Simulated the Design**:
+    I compiled the Verilog design (`good_mux.v`) and its testbench (`tb_good_mux.v`).
+    ```shell
+    iverilog good_mux.v tb_good_mux.v 
+    ```
+
+3.  **Ran the Simulation**:
+    ```shell
+    ./a.out
+    ```
+
+4.  **Viewed the Waveform**:
+    I opened the output file with GTKWave to visualize the signals.
+    ```shell
+    gtkwave tb_good_mux.vcd
+    ```
+    I saved a screenshot of my waveform as `gtkwave.png` in this directory.
+
+### My Multiplexer Waveform:
+![My Mux Waveform](gtkwave.png)
 
 ---
 
-## 2. Getting Started with iverilog
+## Lab 2: Synthesizing the Multiplexer
 
-**iverilog** is an open-source tool for Verilog simulation. The general flow is:
+Next, I converted my Verilog code into a gate-level netlist using Yosys.
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/3ca190fb-cfa4-4abb-b9e1-0151b3c4bdba" alt="iverilog Simulation Flow" width="70%">
-</div>
+### Steps I Took to Synthesize the Design:
 
-- Provide the design and testbench to iverilog.  
-- Simulation creates a `.vcd` file for waveform viewing in GTKWave.
+1.  **Launched Yosys**:
+    ```shell
+    yosys
+    ```
+
+2.  **Loaded the Liberty Library**:
+    I pointed to my Sky130 library file.
+    ```yosys
+    read_liberty -lib /path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
+    ```
+
+3.  **Read My Verilog File**:
+    ```yosys
+    read_verilog good_mux.v
+    ```
+
+4.  **Synthesized and Mapped to Gates**:
+    ```yosys
+    synth -top good_mux
+    abc -liberty /path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
+    ```
+
+5.  **Visualized the Netlist**:
+    This command showed me the synthesized circuit.
+    ```yosys
+    show
+    ```
+    I took a screenshot of the netlist and saved it as `Netlist.png` in this directory.
+
+### My Synthesized Netlist:
+![My Synthesized Netlist](Netlist.png)
 
 ---
 
-## 3. Hands-on Lab: 2-to-1 Multiplexer Simulation
+By the end of Day 1, I had successfully simulated and synthesized a Verilog module, turning my code into a visual hardware representation.
 
-We’ll simulate a **2-to-1 multiplexer** using iverilog.
 
-### Step 1: Clone Repository
-```bash
-git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
-cd sky130RTLDesignAndSynthesisWorkshop/verilog_files
