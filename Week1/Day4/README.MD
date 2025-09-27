@@ -155,6 +155,7 @@ module ternary_operator_mux (input i0, input i1, input sel, output y);
 endmodule
 ```
 - **Function:** `y = i1` if `sel = 1`; else `y = i0`.
+![lab1](./ternary_gtk.png)
 
 ---
 
@@ -165,7 +166,8 @@ _Follow the standard Yosys synthesis flow._
 
 ternerary oerator 
 
-<img width="570" height="340" alt="Image" src="https://github.com/user-attachments/assets/6082e03a-3ac9-45f7-9277-f99a97afd914" />
+![lab2](./ternary_yosys.png)
+
 
 ---
 
@@ -179,14 +181,12 @@ iverilog /path/to/primitives.v /path/to/sky130_fd_sc_hd.v ternary_operator_mux.v
 ```
 - RTL simuation waveform 
 
-<img width="942" height="359" alt="Image" src="https://github.com/user-attachments/assets/b2a695aa-c884-40e3-b7d8-38ddbeabb7ba" />
-
 ---
 
 
 - GLS simulation waveform 
 
-<img width="938" height="485" alt="Image" src="https://github.com/user-attachments/assets/0a55bf60-8a56-4017-8696-25ee9b29f8cf" />
+![lab3](./gls_ternary.png)
 
 ---
 
@@ -221,13 +221,13 @@ end
 
 - Bad Multipliexer Desig: Yosys output viewer
 
-<img width="572" height="282" alt="Image" src="https://github.com/user-attachments/assets/b69f8801-a49f-489c-a00f-13ae573ab07f" />
+![lab4](./badmux_yosys.png)
 
 ---
 
 - RTL level simulation for Bad Multipliexer Design
 
-<img width="935" height="360" alt="Image" src="https://github.com/user-attachments/assets/3a5bb104-ada3-4760-bd1e-eadd195cd8a5" />
+![lab1](./badmux_gtk.png)
 
 ---
 
@@ -236,7 +236,7 @@ end
 Perform GLS on the `bad_mux`.  
 Expect simulation mismatches or warnings due to above issues.
 
-<img width="937" height="456" alt="Image" src="https://github.com/user-attachments/assets/6bc5995b-f87e-44d5-a9f3-249b12d8d9d0" />
+![lab5](./gls_badmux.png)
 
 ---
 
@@ -256,7 +256,7 @@ module blocking_caveat (input a, input b, input c, output reg d);
   end
 endmodule
 ```
-<img width="574" height="267" alt="Image" src="https://github.com/user-attachments/assets/9425efc4-264b-49ab-aedb-14980bbcab67" />
+![lab1](./block_caveat_gtk.png)
 
 #### What’s wrong?
 - The order of assignments causes `d` to use the old value of `x`—not the newly computed value.
@@ -269,9 +269,6 @@ always @ (*) begin
   d = x & c;
 end
 ```
-
-<img width="936" height="379" alt="Image" src="https://github.com/user-attachments/assets/0afde0be-3b7e-4998-9f5c-b508d90bf6cc" />
-
 ---
 
 ### Lab 7: Synthesis of the Blocking Caveat Module
@@ -279,7 +276,7 @@ end
 Synthesize the module and observe the results difference between RTL and GLS clearly. We understand why blocking statement are used with utmost care.
 
 
-<img width="920" height="489" alt="Image" src="https://github.com/user-attachments/assets/1a7508d3-8d94-49d0-b8ff-e2a3af32a8a5" />
+![lab7](./gls_blockcaveat.png)
 
 ---
 
