@@ -119,13 +119,13 @@ always @(*) begin
 end
 endmodule
 ```
-![in_comp_if](https://github.com/user-attachments/assets/91d1cc1d-bb3a-4ea8-a272-363414777868)
+![lab1](./if1gtk.png)
 
 ---
 
 ### Lab 2: Synthesis Result of Lab 1
 
-![incomp_synth](https://github.com/user-attachments/assets/691045e7-39e0-4e6c-98bd-511b501fbe35)
+![lab2](./latch_yosys_if1.png)
 
 ---
 
@@ -141,13 +141,13 @@ always @(*) begin
 end
 endmodule
 ```
-![icomp2](https://github.com/user-attachments/assets/2f614956-e4af-4d29-80ae-13a167e7831d)
+![lab3](./if2gtk.png)
 
 ---
 
 ### Lab 4: Synthesis Result of Lab 3
 
-![incomp2synth](https://github.com/user-attachments/assets/880ff7bb-23fb-4362-bf8f-a2494a854b53)
+![lab4](./yosys_if2.png)
 
 ---
 
