@@ -393,10 +393,6 @@ Exhibits the characteristic ramp-up sequence as the accumulation loop executes, 
 **🌊 Analog Output (OUT)**  
 Tracks the digital input pattern, demonstrating accurate DAC conversion. Values correspond to:
 
-$$
-V_{OUT} = \frac{\text{RV\_TO\_DAC}}{1023} \times (V_{REFH} - V_{REFL})
-$$
-
 ### 💡 Visualization Enhancement
 
 For improved analog representation in GTKWave:
@@ -411,6 +407,12 @@ For improved analog representation in GTKWave:
 ### Mathematical Model
 
 The 10-bit DAC performs quantized voltage conversion according to:
+
+
+$$
+V_{OUT} = \frac{\text{RV\_TO\_DAC}}{1023} \times (V_{REFH} - V_{REFL})
+$$
+
 
 $$
 V_{OUT} = \frac{r_{17}}{1023} \times V_{REF\_SPAN}
