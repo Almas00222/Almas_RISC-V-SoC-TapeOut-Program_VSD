@@ -127,15 +127,7 @@ The design comprises three essential components working in harmony:
 
 **Objective**: Validate open-source IP interoperability and demonstrate CPU-controlled analog output generation using **SkyWater 130nm PDK**.
 
-![System Architecture](Images/BabySoC_block.png)  
-
----
-
-## 🏗️ Physical Architecture & Power Distribution
-
-The following diagram reveals the **on-chip floorplan** and **multi-voltage domain strategy** employed in VSDBabySoC:
-
-![Physical Implementation Diagram](https://www.vlsisystemdesign.com/wp-content/uploads/2022/09/Picture1-6.drawio-1.png)
+![System Architecture](SoC.png)  
 
 ### ⚡ Dual-Voltage Architecture
 
