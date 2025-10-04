@@ -88,12 +88,13 @@ endmodule
   - If `a` is true, `y` is assigned the value of `b`.
   - If `a` is false, `y` is 0.
 
-Follow the steps from [Day 1 Synthesis Lab](https://github.com/Ahtesham18112011/RTL_workshop/tree/main/Day_1#6-synthesis-lab-with-yosys) and add the following between `abc -liberty` and `synth -top`:
+Follow the steps from [Day 1 Synthesis Lab]!
+[Optimized Mux Circuit](./opt_check2.png) and add the following between `abc -liberty` and `synth -top`:
 ```shell
 opt_clean -purge
 ```
 
-![Lab 1 Output](/home/almas/Almas_RISC-V-SoC-TapeOut-Program_VSD/Week1/DAY-3/)
+![Lab 1 Output](./yosys_opt_check1.png)
 
 ---
 
@@ -112,7 +113,7 @@ endmodule
   - `y = 1` if `a` is true.
   - `y = b` if `a` is false.
 
-![Lab 2 Output](/home/almas/Almas_RISC-V-SoC-TapeOut-Program_VSD/Week1/DAY-3/)
+![Lab 2 Output](./opt_check2.png)
 
 ---
 
@@ -129,7 +130,7 @@ endmodule
 **Functionality:**  
 2-to-1 multiplexer; `y = a ? 1 : b` (outputs `1` when `a` is true, otherwise `b`).
 
-![Lab 3 Output](/home/almas/Almas_RISC-V-SoC-TapeOut-Program_VSD/Week1/DAY-3/)
+![Lab 3 Output](./opt_check2.png)
 
 ---
 
@@ -151,7 +152,7 @@ module opt_check4 (input a , input b , input c , output y);
 - Logic simplifies to:  
   `y = a ? c : !c`
 
-![Lab 4 Output](/home/almas/Almas_RISC-V-SoC-TapeOut-Program_VSD/Week1/DAY-3/)
+![Lab 4 Output](./opt_check4.png)
 
 ---
 
@@ -175,9 +176,6 @@ endmodule
 - D flip-flop with:
   - Asynchronous reset to 0
   - Loads constant `1` when not in reset
-
-![Lab 5 Output](/home/almas/Almas_RISC-V-SoC-TapeOut-Program_VSD/Week1/DAY-3/)
-
 ---
 
 ### Lab 6
@@ -198,8 +196,6 @@ endmodule
 
 **Functionality:**
 - D flip-flop always sets output `q` to `1` (regardless of reset or clock).
-
-![Lab 6 Output](/home/almas/Almas_RISC-V-SoC-TapeOut-Program_VSD/Week1/DAY-3/)
 
 ---
 
