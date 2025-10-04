@@ -395,6 +395,11 @@ Tracks the digital input pattern, demonstrating accurate DAC conversion. Values 
 
 ### 💡 Visualization Enhancement
 
+
+$$
+V_{OUT} = \frac{RV\_TO\_DAC}{1023} \times (V_{REFH} - V_{REFL})
+$$
+
 For improved analog representation in GTKWave:
 1. Right-click the `OUT` signal
 2. Navigate to **Data Format → Analog → Step**
@@ -407,11 +412,6 @@ For improved analog representation in GTKWave:
 ### Mathematical Model
 
 The 10-bit DAC performs quantized voltage conversion according to:
-
-
-$$
-V_{\text{OUT}} = \frac{\text{RV\_TO\_DAC}}{1023} \times (V_{\text{REFH}} - V_{\text{REFL}})
-$$
 
 
 $$
