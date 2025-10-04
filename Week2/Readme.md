@@ -410,7 +410,7 @@ The 10-bit DAC performs quantized voltage conversion according to:
 
 
 $$
-V_{OUT} = \frac{\text{RV\_TO\_DAC}}{1023} \times (V_{REFH} - V_{REFL})
+V_{\text{OUT}} = \frac{\text{RV\_TO\_DAC}}{1023} \times (V_{\text{REFH}} - V_{\text{REFL}})
 $$
 
 
