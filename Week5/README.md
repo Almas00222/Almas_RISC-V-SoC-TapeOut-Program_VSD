@@ -19,6 +19,10 @@ Clone the official repository (with all submodules):
 git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
 cd OpenROAD-flow-scripts
 ```
+
+![Alt Text](Images/installation1.jpg)
+
+
 #### 2️⃣ Run the Setup Script
 Execute the setup script to install dependencies and prepare the environment:
 
@@ -26,12 +30,16 @@ Execute the setup script to install dependencies and prepare the environment:
 sudo ./setup.sh
 ```
 
+![Alt Text](Images/installation1.jpg)
+
 #### 3️⃣ Build OpenROAD
 After setup, build OpenROAD locally:
 
 ```bash
 ./build_openroad.sh --local
 ```
+
+![Alt Text](Images/installation1.jpg)
 
 #### 4️⃣ Verify the Installation
 Source the environment and verify that the tools are available:
@@ -42,6 +50,7 @@ yosys -help
 openroad -help
 ```
 
+![Alt Text](Images/installation1.jpg)
 
 #### 5️⃣ Run the OpenROAD Flow
 Run the full RTL-to-GDSII flow:
@@ -51,12 +60,16 @@ cd flow
 make
 ```
 
+![Alt Text](Images/installation1.jpg)
+
 #### 6️⃣ Launch the GUI
 To visualize the final layout in the GUI:
 
 ```bash
 make gui_final
 ```
+
+![Alt Text](Images/installation1.jpg)
 
 ✅ Done! You’ve successfully set up OpenROAD and can now explore the full digital IC design flow.
 
